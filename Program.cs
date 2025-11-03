@@ -29,12 +29,28 @@ foreach (Room room in rooms)
     lines.Add($"{room.Roomnummer},{room.User},{room.Status}");
 
 }
+File.WriteAllLines("Room.txt", lines);
+ string[] lines1 = File.ReadAllLines("Users.txt");
+
+foreach (string line in lines1)
+{
+    string[] data = line.Split(",");
+    string number = data[0];
+    string user1 = data[1];
+    string statusText = data[2];
+
+    if (Enum.TryParse(statusText, ignoreCase: true, out RoomStatus status)) 
+    {
+        rooms.Add(new Room(number, user1, status));
+    }
+}
+
 
 if (File.Exists("Users.txt")) //läser igenom alla users i Users.txt
 {
 
-    string[] lines1 = File.ReadAllLines("Users.txt");
-    foreach (string line in lines1)
+    string[] lines2 = File.ReadAllLines("Users.txt");
+    foreach (string line in lines2)
     {
 
         string[] data = line.Split(",");
@@ -76,15 +92,15 @@ while (running)
         switch (choise)
         {
 
-            case "1": 
+            case "1":
                 foreach (Room room in rooms)
 
                 {
                     if (room.Status == RoomStatus.Occupied) //om rum är occupied så händer detta
                         Console.WriteLine(room.Status);
-                         System.Console.WriteLine(room.User + " is living here");
+                    System.Console.WriteLine(room.User + " is living here");
                     System.Console.WriteLine(room.Roomnummer + "room nummber");
-                   
+
                     System.Console.WriteLine("------------");
 
                 }
@@ -137,7 +153,7 @@ while (running)
                 System.Console.WriteLine("Choose a name for the guest room");
                 string name = Console.ReadLine()!;
 
-              foreach (Room room in rooms)
+                foreach (Room room in rooms)
                 {
                     if (room.Roomnummer == number)
                     {
@@ -146,10 +162,13 @@ while (running)
                         room.User = name;
 
                     }
-                    
-                }
 
+                }
                 break;
+
+        
+
+
 
             case "4":
 
