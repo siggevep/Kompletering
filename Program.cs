@@ -20,10 +20,10 @@ rooms.Add(new("7", "arben",RoomStatus.Occupied));
 rooms.Add(new("8", "lukas", RoomStatus.Avaible));
 rooms.Add(new("9", "felix", RoomStatus.Occupied));
 rooms.Add(new("10", "nisse",RoomStatus.Cleaning));
+//lägger till rum då det inte står att det ska finns hur många rum som hälst
 
 
-
-if (File.Exists("Users.txt"))
+if (File.Exists("Users.txt")) //läser igenom alla users i Users.txt
 {
 
     string[] lines1 = File.ReadAllLines("Users.txt");
@@ -46,7 +46,7 @@ while (running)
 
         Console.WriteLine("Password");
         string password = Console.ReadLine()!;
-        foreach (User user in users)
+        foreach (User user in users)// försöker lågga in
             if (user.TryLogin(username, password))
             {
                 active_user = user;
@@ -54,7 +54,7 @@ while (running)
             }
     }
 
-    if (active_user != null)
+    if (active_user != null) //om du är inloggade så händer detta
     {
 
 
@@ -69,11 +69,11 @@ while (running)
         switch (choise)
         {
 
-            case "1":
+            case "1": 
                 foreach (Room room in rooms)
 
                 {
-                    if (room.Status == RoomStatus.Occupied)
+                    if (room.Status == RoomStatus.Occupied) //om rum är occupied så händer detta
                         Console.WriteLine(room.Status);
                          System.Console.WriteLine(room.User + " is living here");
                     System.Console.WriteLine(room.Roomnummer + "room nummber");
@@ -89,7 +89,7 @@ while (running)
                 foreach (Room room in rooms)
 
                 {
-                    if (room.Status != RoomStatus.Occupied)
+                    if (room.Status != RoomStatus.Occupied) //om rum inte är occupied så händer detta 
                     {
 
 
@@ -105,7 +105,7 @@ while (running)
 
             case "3":
 
-                foreach (Room room in rooms)
+                foreach (Room room in rooms) // visar alla rum som är lediga
 
                 {
                     if (room.Status == RoomStatus.Avaible)
@@ -123,6 +123,7 @@ while (running)
 
 
                 }
+                // får dig att skrive rum nummer och namn och sedan ändrar det rummit till occupied och ändrar namnet till namnet du skrev
                 System.Console.WriteLine("What number are you choosing");
                 string number = Console.ReadLine()!;
                 Console.Clear();
@@ -146,20 +147,17 @@ while (running)
             case "4":
 
 
-                foreach (Room room in rooms)
+                foreach (Room room in rooms) // skriver alla run för att tillfälidgt sätta ett room i maintence
 
                 {
-                    if (room.Status == RoomStatus.Avaible)
-                    {
-
-
-                        Console.WriteLine(room.Status);
+                
+                        Console.WriteLine(room.Status); 
                         System.Console.WriteLine(room.Roomnummer + "room nummber");
                         System.Console.WriteLine("------------");
-                    }
+                
                 }
                  System.Console.WriteLine("What room do you want to tempoarly diasble");
-                string disable = Console.ReadLine()!;
+                string disable = Console.ReadLine()!;  // väljer rum nummer och sedan ändrar den till Maintence
 
                 foreach (Room room in rooms)
                 {
@@ -176,7 +174,7 @@ while (running)
 
             case "5":
 
-              foreach (Room room in rooms)
+              foreach (Room room in rooms) //kollar alla rum som är Occupied, du skriver sedan vilket namn och sedan ändrar namnet till tomt och ändrar statuset till Avialible
                 {
                     if (room.Status == RoomStatus.Occupied)
                     {
@@ -189,12 +187,12 @@ while (running)
 
                 }
 
-                System.Console.WriteLine("what Guest do you want to kick out");
-                string kick_out = Console.ReadLine()!;
+                System.Console.WriteLine("what Guest do you want to CHeckout out");
+                string Check = Console.ReadLine()!;
                 foreach (Room room in rooms)
                 {
                     
-                    if (room.User == kick_out)
+                    if (room.User == Check)
                     {
                         room.User = " ";
                         room.Status = RoomStatus.Avaible;
