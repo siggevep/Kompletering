@@ -83,16 +83,17 @@ if (File.Exists("Room.txt"))
                     foreach (Room room in rooms)
 
                     {
-                        if (room.Status == RoomStatus.Occupied) //om rum är occupied så händer detta
+                        if (room.Status == RoomStatus.Occupied){ //om rum är occupied så händer detta
                             Console.WriteLine(room.Status);
                         System.Console.WriteLine(room.User + " is living here");
                         System.Console.WriteLine(room.Roomnummer + "room nummber");
 
                         System.Console.WriteLine("------------");
+                        }
 
                     }
 
-
+                Console.ReadLine();
                     break;
 
                 case "2":
