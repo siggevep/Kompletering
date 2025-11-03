@@ -8,12 +8,26 @@ class Room
 
     string User;
 
+    public RoomStatus Status;
 
-    public Room(int roomnummer, string user)
+    public Room(int roomnummer, string user,RoomStatus status)
     {
         Roomnummer = roomnummer;
         User = user;
+        Status = status;
     }
 
 }
 
+public enum RoomStatus
+{
+
+    Avaible,
+
+    Occupied,
+
+    Cleaning,
+
+    Maintence,
+
+}
