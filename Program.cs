@@ -24,10 +24,11 @@ if (File.Exists("Room.txt"))
         string user1 = data[1];
         string statusText = data[2];
 
-        if (Enum.TryParse(statusText, ignoreCase: true, out RoomStatus status))
+        if (Enum.TryParse(statusText, out RoomStatus status))
         {
             rooms.Add(new Room(number, user1, status));
         }
+    }
     }
 
 
@@ -108,7 +109,7 @@ if (File.Exists("Room.txt"))
                            
                         }
                     }
- Console.ReadLine();
+                     Console.ReadLine();
 
 
                     break;
@@ -138,20 +139,38 @@ if (File.Exists("Room.txt"))
                     string number = Console.ReadLine()!;
                     Console.Clear();
                     System.Console.WriteLine("Choose a name for the guest room");
+
                     string name = Console.ReadLine()!;
 
-                    foreach (Room room in rooms)
+                foreach (Room roms in rooms)
+                {
+
+                    if (roms.Roomnummer == number)
                     {
-                        if (room.Roomnummer == number)
-                        {
 
-                            room.Status = RoomStatus.Occupied;
-                            room.User = name;
+                        roms.User = name;
+                        roms.Status = RoomStatus.Occupied;
+                        break;
 
-                        }
 
                     }
+                }
+                    List<string> updatedLines = new List<string>();//för att kunna hitta den speficifa raden och ändra den
+
+           foreach (var room in rooms) 
+            {
+            string line = $"{room.Roomnummer},{room.User},{room.Status}";
+            updatedLines.Add(line);
+            }
+
+File.WriteAllLines("Room.txt", updatedLines);
                     break;
+
+
+
+
+                    
+                
 
 
 
@@ -218,6 +237,6 @@ if (File.Exists("Room.txt"))
 
         }
     }
-}
+
 
 
