@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sigge.voneggerspatr\\Kompletering\\Kompletering.csproj": {}
+    "C:\\Users\\sigge.voneggerspatr\\kompletering\\Kompletering.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sigge.voneggerspatr\\Kompletering\\Kompletering.csproj": {
+    "C:\\Users\\sigge.voneggerspatr\\kompletering\\Kompletering.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sigge.voneggerspatr\\Kompletering\\Kompletering.csproj",
+        "projectUniqueName": "C:\\Users\\sigge.voneggerspatr\\kompletering\\Kompletering.csproj",
         "projectName": "Kompletering",
-        "projectPath": "C:\\Users\\sigge.voneggerspatr\\Kompletering\\Kompletering.csproj",
+        "projectPath": "C:\\Users\\sigge.voneggerspatr\\kompletering\\Kompletering.csproj",
         "packagesPath": "C:\\Users\\sigge.voneggerspatr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sigge.voneggerspatr\\Kompletering\\obj\\",
+        "outputPath": "C:\\Users\\sigge.voneggerspatr\\kompletering\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\sigge.voneggerspatr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

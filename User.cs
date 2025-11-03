@@ -7,7 +7,7 @@ class User
 
     string password;
 
-public User(string Name,string Password)
+    public User(string Name, string Password)
     {
         name = Name;
         password = Password;
@@ -15,5 +15,10 @@ public User(string Name,string Password)
 
     }
 
+public bool TryLogin(string Name, string Password)
+    {
+        return Name == name && Password == password;
+
+    }
 
 }

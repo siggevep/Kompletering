@@ -1,0 +1,15 @@
+C:\Users\sigge.voneggerspatr\kompletering\bin\Debug\net8.0\Kompletering.exe
+C:\Users\sigge.voneggerspatr\kompletering\bin\Debug\net8.0\Kompletering.deps.json
+C:\Users\sigge.voneggerspatr\kompletering\bin\Debug\net8.0\Kompletering.runtimeconfig.json
+C:\Users\sigge.voneggerspatr\kompletering\bin\Debug\net8.0\Kompletering.dll
+C:\Users\sigge.voneggerspatr\kompletering\bin\Debug\net8.0\Kompletering.pdb
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\Kompletering.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\Kompletering.AssemblyInfoInputs.cache
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\Kompletering.AssemblyInfo.cs
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\Kompletering.csproj.CoreCompileInputs.cache
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\Kompletering.sourcelink.json
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\Kompletering.dll
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\refint\Kompletering.dll
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\Kompletering.pdb
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\Kompletering.genruntimeconfig.cache
+C:\Users\sigge.voneggerspatr\kompletering\obj\Debug\net8.0\ref\Kompletering.dll
