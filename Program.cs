@@ -75,8 +75,9 @@ while (running)
                 foreach (Room room in rooms)
 
                 {
-                    if (room.Status == RoomStatus.Avaible)
+                    if (room.Status == RoomStatus.Occupied)
                         Console.WriteLine(room.Status);
+                         System.Console.WriteLine(room.User + " is living here");
                     System.Console.WriteLine(room.Roomnummer + "room nummber");
                    
                     System.Console.WriteLine("------------");
@@ -90,12 +91,11 @@ while (running)
                 foreach (Room room in rooms)
 
                 {
-                    if (room.Status != RoomStatus.Avaible)
+                    if (room.Status != RoomStatus.Occupied)
                     {
 
 
                         Console.WriteLine(room.Status);
-                         System.Console.WriteLine(room.User + " is living here");
                         System.Console.WriteLine(room.Roomnummer + "room nummber");
                         System.Console.WriteLine("------------");
                     }
@@ -110,7 +110,7 @@ while (running)
                 foreach (Room room in rooms)
 
                 {
-                    if (room.Status == RoomStatus.Occupied)
+                    if (room.Status == RoomStatus.Avaible)
                     {
 
 
@@ -145,7 +145,22 @@ while (running)
 
                 break;
 
+            case "4":
+                  foreach (Room room in rooms)
 
+                {
+                    if (room.Status == RoomStatus.Avaible)
+                    {
+
+
+                        Console.WriteLine(room.Status);
+                        System.Console.WriteLine(room.Roomnummer + "room nummber");
+                        System.Console.WriteLine("------------");
+
+                    }
+                }
+
+                break;
         }
 
     }
