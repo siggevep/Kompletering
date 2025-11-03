@@ -2,10 +2,26 @@
 using app;
 
 
+
+
 List<Room> rooms = new List<Room>();
 List<User> users = new List<User>();
 User? active_user = null;
 bool running = true;
+
+rooms.Add(new("1", "10", RoomStatus.Avaible));
+rooms.Add(new("2", "10", RoomStatus.Cleaning));
+rooms.Add(new("3", "10", RoomStatus.Maintence));
+rooms.Add(new("4", "10",RoomStatus.Avaible));
+rooms.Add(new("5", "10",RoomStatus.Avaible));
+rooms.Add(new("6", "10",RoomStatus.Cleaning));
+rooms.Add(new("7", "10",RoomStatus.Occupied));
+rooms.Add(new("8", "10", RoomStatus.Avaible));
+rooms.Add(new("9", "10", RoomStatus.Occupied));
+rooms.Add(new("10", "10",RoomStatus.Cleaning));
+
+
+users.Add(new("sigge", "kebab"));
 Console.WriteLine("Hello, World!");
 
 if (File.Exists("Users.txt"))
@@ -21,7 +37,7 @@ if (File.Exists("Users.txt"))
 }
 while (running)
 {
-    if (active_user == null)
+    if (active_user == null) // ser om du är inloggad
     {
         Console.WriteLine("Hello you need to login first login?");
 
@@ -44,8 +60,9 @@ while (running)
 
 
 
-        Console.WriteLine("hello");
-
+        Console.WriteLine("hello here is your menu");
+        Console.WriteLine("Look at the rooms with guests");
+        Console.ReadLine();
 
         
     }
