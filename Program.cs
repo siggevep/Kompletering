@@ -71,18 +71,36 @@ while (running)
         {
 
             case "1":
-      foreach(Room room in rooms)
+                foreach (Room room in rooms)
 
                 {
                     if (room.Status == RoomStatus.Avaible)
-                    Console.WriteLine(room.Status);
-                    System.Console.WriteLine(room.Roomnummer, "room nummber");
-                    System.Console.WriteLine(room.User, "is living here");  
-                    System.Console.WriteLine("------------"); 
+                        Console.WriteLine(room.Status);
+                    System.Console.WriteLine(room.Roomnummer + "room nummber");
+                    System.Console.WriteLine(room.User + " is living here");
+                    System.Console.WriteLine("------------");
 
                 }
 
-      break;
+
+                break;
+
+            case "2":
+                   foreach (Room room in rooms)
+
+                {
+                    if (room.Status != RoomStatus.Avaible)
+                    {
+                        
+                    
+                        Console.WriteLine(room.Status);
+                    System.Console.WriteLine(room.Roomnummer + "room nummber");
+                    System.Console.WriteLine("------------");
+}
+                }
+
+
+                break;
 
 
 
