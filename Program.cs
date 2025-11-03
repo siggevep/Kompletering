@@ -13,20 +13,20 @@ bool running = true;
 //lägger till rum då det inte står att det ska finns hur många rum som hälst
 
 
-if (File.Exists("Room.txt"))
+if (File.Exists("Room.txt"))//denna funktionen läser in alla raderna och sedan lägger till dem i listan
 {
-    string[] lines1 = File.ReadAllLines("Room.txt");
+    string[] lines1 = File.ReadAllLines("Room.txt");//fixar en arayy för listor som är rader
 
     foreach (string line in lines1)
     {
-        string[] data = line.Split(",");
+        string[] data = line.Split(","); //splitar en rad into sequtioner
         string number = data[0];
         string user1 = data[1];
         string statusText = data[2];
 
-        if (Enum.TryParse(statusText, out RoomStatus status))
+        if (Enum.TryParse(statusText, out RoomStatus status)) //parsar data 2(eller ja efter , 2)
         {
-            rooms.Add(new Room(number, user1, status));
+            rooms.Add(new Room(number, user1, status)); //lägger till dem
         }
     }
     }
@@ -146,7 +146,7 @@ if (File.Exists("Room.txt"))
                 foreach (Room roms in rooms)
                 {
 
-                    if (roms.Roomnummer == number)
+                    if (roms.Roomnummer == number)//uppdaterar rummet i rooms listan 
                     {
 
                         roms.User = name;
@@ -192,24 +192,24 @@ File.WriteAllLines("Room.txt", updatedLines);
                     System.Console.WriteLine("What room do you want to tempoarly diasble");
                     string disable = Console.ReadLine()!;  // väljer rum nummer och sedan ändrar den till Maintence
 
-                foreach (Room room in rooms)
+                foreach (Room room in rooms)//loopar alla rummen
                 {
 
-                    if (room.Roomnummer == disable)
+                    if (room.Roomnummer == disable)//kollar så det är rätt
                     {
-                        room.Status = RoomStatus.Maintence;
-                        room.User = "";
+                        room.Status = RoomStatus.Maintence;// ändrar statusen
+                        room.User = ""; //ändrar usern
                     }
                 }
-                     List<string> updatedLiness = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad
+                     List<string> updatedLiness = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad(med hjälp av raderna inder)
 
-             foreach (var room in rooms) 
+             foreach (var room in rooms) //loppar igenom alla i listan
               {
-              string line = $"{room.Roomnummer},{room.User},{room.Status}";
+              string line = $"{room.Roomnummer},{room.User},{room.Status}";//sparar alla raderna
               updatedLiness.Add(line);
                }
 
-               File.WriteAllLines("Room.txt", updatedLiness);
+               File.WriteAllLines("Room.txt", updatedLiness);//skriver över det gamla och lägger till alla nya rader
 
                     
                     Console.Clear();
@@ -220,7 +220,7 @@ File.WriteAllLines("Room.txt", updatedLines);
 
                     foreach (Room room in rooms) //kollar alla rum som är Occupied, du skriver sedan vilket namn och sedan ändrar namnet till tomt och ändrar statuset till Avialible
                     {
-                        if (room.Status == RoomStatus.Occupied)
+                        if (room.Status == RoomStatus.Occupied)//käckar om rummet är Occupied eller inte
                         {
                             System.Console.WriteLine(room.User + " this is the person living here");
                             System.Console.WriteLine(room.Roomnummer + " this is the room nummer");
@@ -233,19 +233,19 @@ File.WriteAllLines("Room.txt", updatedLines);
 
                     System.Console.WriteLine("what Guest do you want to CHeckout out");
                     string Check = Console.ReadLine()!;
-                foreach (Room room in rooms)
+                foreach (Room room in rooms)//loopar alla rummen
                 {
 
-                    if (room.User == Check)
+                    if (room.User == Check)//kollar så att det är rätt user
                     {
-                        room.User = " ";
-                        room.Status = RoomStatus.Avaible;
+                        room.User = " ";//ändrar alla namnen
+                        room.Status = RoomStatus.Avaible;//ändrar statusen
                         break;
                     }
                 }
                       List<string> updatedLine = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad
 
-             foreach (var room in rooms) 
+             foreach (var room in rooms) //-,,-
               {
               string line = $"{room.Roomnummer},{room.User},{room.Status}";
               updatedLine.Add(line);
