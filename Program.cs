@@ -67,7 +67,7 @@ while (running)
         Console.WriteLine("3. Book a guest in a Avible room");
         Console.WriteLine("4. Mark a room temporarly not avilable");
         Console.WriteLine("5. Check out a guest");
-        string choise = Console.ReadLine();
+        string choise = Console.ReadLine()!;
         switch (choise)
         {
 
@@ -173,6 +173,37 @@ while (running)
                     }
                 }
                 Console.Clear();
+                break;
+
+
+            case "5":
+
+              foreach (Room room in rooms)
+                {
+                    if (room.Status == RoomStatus.Occupied)
+                    {
+                        System.Console.WriteLine(room.User + " this is the person living here");
+                     System.Console.WriteLine(room.Roomnummer + " this is the room nummer");
+
+
+                    }
+
+
+                }
+
+                System.Console.WriteLine("what Guest do you want to kick out");
+                string kick_out = Console.ReadLine()!;
+                foreach (Room room in rooms)
+                {
+                    
+                    if (room.User == kick_out)
+                    {
+                        room.User = " ";
+                        room.Status = RoomStatus.Avaible;
+
+                    }
+                }
+
                 break;
         }
 
