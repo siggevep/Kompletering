@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Metadata;
+using System.Runtime.Intrinsics.Arm;
 using app;
 
 
@@ -54,8 +55,8 @@ while (running)
 
             }
     }
-        
-  if (active_user != null)
+
+    if (active_user != null)
     {
 
 
@@ -77,7 +78,7 @@ while (running)
                     if (room.Status == RoomStatus.Avaible)
                         Console.WriteLine(room.Status);
                     System.Console.WriteLine(room.Roomnummer + "room nummber");
-                    System.Console.WriteLine(room.User + " is living here");
+                   
                     System.Console.WriteLine("------------");
 
                 }
@@ -86,32 +87,68 @@ while (running)
                 break;
 
             case "2":
-                   foreach (Room room in rooms)
+                foreach (Room room in rooms)
 
                 {
                     if (room.Status != RoomStatus.Avaible)
                     {
-                        
-                    
+
+
                         Console.WriteLine(room.Status);
-                    System.Console.WriteLine(room.Roomnummer + "room nummber");
-                    System.Console.WriteLine("------------");
-}
+                         System.Console.WriteLine(room.User + " is living here");
+                        System.Console.WriteLine(room.Roomnummer + "room nummber");
+                        System.Console.WriteLine("------------");
+                    }
                 }
+
 
 
                 break;
 
+            case "3":
+
+                foreach (Room room in rooms)
+
+                {
+                    if (room.Status == RoomStatus.Occupied)
+                    {
+
+
+                        Console.WriteLine(room.Status);
+                        System.Console.WriteLine(room.Roomnummer + "room nummber");
+                        System.Console.WriteLine("------------");
+                    }
 
 
 
+
+
+
+                }
+                System.Console.WriteLine("What number are you choosing");
+                string number = Console.ReadLine()!;
+                Console.Clear();
+                System.Console.WriteLine("Choose a name for the guest room");
+                string name = Console.ReadLine()!;
+
+              foreach (Room room in rooms)
+                {
+                    if (room.Roomnummer == number)
+                    {
+
+                        room.Status = RoomStatus.Occupied;
+                        room.User = name;
+
+                    }
+                    
+                }
+
+                break;
 
 
         }
 
-        
     }
-
 }
 
 
