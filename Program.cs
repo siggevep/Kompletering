@@ -60,7 +60,7 @@ while (running)
     {
 
 
-
+        Console.Clear();
         Console.WriteLine("hello here is your menu");
         Console.WriteLine("1.Look at the rooms with guests");
         Console.WriteLine("2. Look at the rooms with no guests");
@@ -146,7 +146,9 @@ while (running)
                 break;
 
             case "4":
-                  foreach (Room room in rooms)
+
+
+                foreach (Room room in rooms)
 
                 {
                     if (room.Status == RoomStatus.Avaible)
@@ -156,10 +158,21 @@ while (running)
                         Console.WriteLine(room.Status);
                         System.Console.WriteLine(room.Roomnummer + "room nummber");
                         System.Console.WriteLine("------------");
+                    }
+                }
+                 System.Console.WriteLine("What room do you want to tempoarly diasble");
+                string disable = Console.ReadLine()!;
+
+                foreach (Room room in rooms)
+                {
+
+                    if (room.Roomnummer == disable)
+                    {
+                        room.Status = RoomStatus.Maintence;
 
                     }
                 }
-
+                Console.Clear();
                 break;
         }
 
