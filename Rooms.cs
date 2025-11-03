@@ -4,13 +4,13 @@ class Room
 {
 
 
-    int Roomnummer;
+    public string Roomnummer;
 
-    string User;
+    public string User;
 
     public RoomStatus Status;
 
-    public Room(int roomnummer, string user,RoomStatus status)
+    public Room(string roomnummer, string user,RoomStatus status)
     {
         Roomnummer = roomnummer;
         User = user;

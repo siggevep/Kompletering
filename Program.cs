@@ -9,16 +9,16 @@ List<User> users = new List<User>();
 User? active_user = null;
 bool running = true;
 
-rooms.Add(new("1", "10", RoomStatus.Avaible));
-rooms.Add(new("2", "10", RoomStatus.Cleaning));
-rooms.Add(new("3", "10", RoomStatus.Maintence));
-rooms.Add(new("4", "10",RoomStatus.Avaible));
-rooms.Add(new("5", "10",RoomStatus.Avaible));
-rooms.Add(new("6", "10",RoomStatus.Cleaning));
-rooms.Add(new("7", "10",RoomStatus.Occupied));
-rooms.Add(new("8", "10", RoomStatus.Avaible));
-rooms.Add(new("9", "10", RoomStatus.Occupied));
-rooms.Add(new("10", "10",RoomStatus.Cleaning));
+rooms.Add(new("1", "kebab", RoomStatus.Avaible));
+rooms.Add(new("2", "jon", RoomStatus.Cleaning));
+rooms.Add(new("3", "ken", RoomStatus.Maintence));
+rooms.Add(new("4", "lit",RoomStatus.Avaible));
+rooms.Add(new("5", "stefan",RoomStatus.Avaible));
+rooms.Add(new("6", "linus",RoomStatus.Cleaning));
+rooms.Add(new("7", "arben",RoomStatus.Occupied));
+rooms.Add(new("8", "lukas", RoomStatus.Avaible));
+rooms.Add(new("9", "felix", RoomStatus.Occupied));
+rooms.Add(new("10", "nisse",RoomStatus.Cleaning));
 
 
 users.Add(new("sigge", "kebab"));
@@ -61,8 +61,35 @@ while (running)
 
 
         Console.WriteLine("hello here is your menu");
-        Console.WriteLine("Look at the rooms with guests");
-        Console.ReadLine();
+        Console.WriteLine("1.Look at the rooms with guests");
+        Console.WriteLine("2. Look at the rooms with no guests");
+        Console.WriteLine("3. Book a guest in a Avible room");
+        Console.WriteLine("4. Mark a room temporarly not avilable");
+        Console.WriteLine("5. Check out a guest");
+        string choise = Console.ReadLine();
+        switch (choise)
+        {
+
+            case "1":
+      foreach(Room room in rooms)
+
+                {
+                    if (room.Status == RoomStatus.Avaible)
+                    Console.WriteLine(room.Status);
+                    System.Console.WriteLine(room.Roomnummer, "room nummber");
+                    System.Console.WriteLine(room.User, "is living here");  
+                    System.Console.WriteLine("------------"); 
+
+                }
+
+      break;
+
+
+
+
+
+
+        }
 
         
     }
