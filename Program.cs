@@ -22,14 +22,12 @@ rooms.Add(new("9", "felix", RoomStatus.Occupied));
 rooms.Add(new("10", "nisse",RoomStatus.Cleaning));
 
 
-users.Add(new("sigge", "kebab"));
-Console.WriteLine("Hello, World!");
 
 if (File.Exists("Users.txt"))
 {
 
-    string[] lines = File.ReadAllLines("Users.txt");
-    foreach (string line in lines)
+    string[] lines1 = File.ReadAllLines("Users.txt");
+    foreach (string line in lines1)
     {
 
         string[] data = line.Split(",");

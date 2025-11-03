@@ -1,0 +1,10 @@
+1,kebab,RoomStatus.Avaible
+2,jon,Cleaning
+3,ken,Maintence
+4,lit,Avaible
+5,stefan,Avaible
+6,linus,Cleaning
+7,arben,Occupied
+8,lukas,Avaible
+9,felix,Occupied
+10,nisse,Cleaning
