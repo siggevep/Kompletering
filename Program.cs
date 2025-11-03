@@ -10,18 +10,25 @@ List<User> users = new List<User>();
 User? active_user = null;
 bool running = true;
 
-rooms.Add(new("1", "kebab", RoomStatus.Avaible));
-rooms.Add(new("2", "jon", RoomStatus.Cleaning));
-rooms.Add(new("3", "ken", RoomStatus.Maintence));
-rooms.Add(new("4", "lit",RoomStatus.Avaible));
-rooms.Add(new("5", "stefan",RoomStatus.Avaible));
-rooms.Add(new("6", "linus",RoomStatus.Cleaning));
+rooms.Add(new("1", " ", RoomStatus.Avaible));
+rooms.Add(new("2", " ", RoomStatus.Cleaning));
+rooms.Add(new("3", " ", RoomStatus.Maintence));
+rooms.Add(new("4", " ",RoomStatus.Avaible));
+rooms.Add(new("5", " ",RoomStatus.Avaible));
+rooms.Add(new("6", " ",RoomStatus.Cleaning));
 rooms.Add(new("7", "arben",RoomStatus.Occupied));
-rooms.Add(new("8", "lukas", RoomStatus.Avaible));
+rooms.Add(new("8", " ", RoomStatus.Avaible));
 rooms.Add(new("9", "felix", RoomStatus.Occupied));
-rooms.Add(new("10", "nisse",RoomStatus.Cleaning));
+rooms.Add(new("10", " ",RoomStatus.Cleaning));
 //lägger till rum då det inte står att det ska finns hur många rum som hälst
 
+
+List<string> lines = new List<string>();
+foreach (Room room in rooms)
+{
+    lines.Add($"{room.Roomnummer},{room.User},{room.Status}");
+
+}
 
 if (File.Exists("Users.txt")) //läser igenom alla users i Users.txt
 {

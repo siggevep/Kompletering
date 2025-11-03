@@ -1,0 +1,2 @@
+Min komplitering:
+Jag har gjort ett program där alla punkterna stämmer av. Jag bestämmde mig tidigt för att använda lista av både rum och User. rumen kan ha namn på den som bor där så kände att det inte behövdes användas och inte göras som en egen class. Jag fixade så inloggning funkar och sparas men tänkte att det blir så många room om man hela tiden kan lägga till flera rum. Jag gjorde bara 10 rum men det går egentligen att göra oändligt med rum, och då det står i uppgiften att det redan ska finnas ett färdigt system finns det redan x antal rum i byggnaden.
