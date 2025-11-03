@@ -191,15 +191,26 @@ File.WriteAllLines("Room.txt", updatedLines);
                     System.Console.WriteLine("What room do you want to tempoarly diasble");
                     string disable = Console.ReadLine()!;  // väljer rum nummer och sedan ändrar den till Maintence
 
-                    foreach (Room room in rooms)
+                foreach (Room room in rooms)
+                {
+
+                    if (room.Roomnummer == disable)
                     {
-
-                        if (room.Roomnummer == disable)
-                        {
-                            room.Status = RoomStatus.Maintence;
-
-                        }
+                        room.Status = RoomStatus.Maintence;
+                        room.User = "";
                     }
+                }
+                     List<string> updatedLiness = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad
+
+             foreach (var room in rooms) 
+              {
+              string line = $"{room.Roomnummer},{room.User},{room.Status}";
+              updatedLiness.Add(line);
+               }
+
+               File.WriteAllLines("Room.txt", updatedLiness);
+
+                    
                     Console.Clear();
                     break;
 
@@ -221,16 +232,25 @@ File.WriteAllLines("Room.txt", updatedLines);
 
                     System.Console.WriteLine("what Guest do you want to CHeckout out");
                     string Check = Console.ReadLine()!;
-                    foreach (Room room in rooms)
+                foreach (Room room in rooms)
+                {
+
+                    if (room.User == Check)
                     {
-
-                        if (room.User == Check)
-                        {
-                            room.User = " ";
-                            room.Status = RoomStatus.Avaible;
-
-                        }
+                        room.User = " ";
+                        room.Status = RoomStatus.Avaible;
+                        break;
                     }
+                }
+                      List<string> updatedLine = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad
+
+             foreach (var room in rooms) 
+              {
+              string line = $"{room.Roomnummer},{room.User},{room.Status}";
+              updatedLine.Add(line);
+               }
+
+               File.WriteAllLines("Room.txt", updatedLine);
 
                     break;
             }
