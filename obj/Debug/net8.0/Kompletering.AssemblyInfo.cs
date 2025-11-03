@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kompletering")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6acde2ebc75e71342fa8265a60364ecaabb4913")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38481d1e9a6fbb9f0f0154d48b5949088fdbc7bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kompletering")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kompletering")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

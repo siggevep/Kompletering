@@ -24,7 +24,7 @@ if (File.Exists("Room.txt"))//denna funktionen läser in alla raderna och sedan 
         string user1 = data[1];
         string statusText = data[2];
 
-        if (Enum.TryParse(statusText, out RoomStatus status)) //parsar data 2(eller ja efter , 2)
+        if (Enum.TryParse(statusText, out RoomStatus status)) //parsar data 2(eller ja det efter andra , )
         {
             rooms.Add(new Room(number, user1, status)); //lägger till dem
         }
@@ -146,7 +146,7 @@ if (File.Exists("Room.txt"))//denna funktionen läser in alla raderna och sedan 
                 foreach (Room roms in rooms)
                 {
 
-                    if (roms.Roomnummer == number)//uppdaterar rummet i rooms listan 
+                    if (roms.Roomnummer == number)//uppdaterar rumme i rooms listan 
                     {
 
                         roms.User = name;
