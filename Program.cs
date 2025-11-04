@@ -160,7 +160,7 @@ if (File.Exists("Room.txt"))//denna funktionen läser in alla raderna och sedan 
                 }
                 List<string> updatedLines = new List<string>();//för att kunna hitta den speficifa raden och ändra den
 
-                foreach (var room in rooms)
+                foreach (var room in rooms) //säger till att varje rad i txt filen sparas och sedan läggs i stringen line och den läggs till i updated lines listan, vilket gör så att när man senare skriver in updated lines i txt filen sparas all den gamla infon förutom den som har ändrats på 
                 {
                     string line = $"{room.Roomnummer},{room.User},{room.Status}";
                     updatedLines.Add(line);
