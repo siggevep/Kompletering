@@ -74,74 +74,76 @@ if (File.Exists("Room.txt"))//denna funktionen läser in alla raderna och sedan 
             Console.WriteLine("2. Look at the rooms with no guests");
             Console.WriteLine("3. Book a guest in a Avible room");
             Console.WriteLine("4. Mark a room temporarly not avilable");
-            Console.WriteLine("5. Check out a guest");
+        Console.WriteLine("5. Check out a guest");
+        Console.WriteLine("6. vMake a room in maintence Avible");
             string choise = Console.ReadLine()!;
-            switch (choise)
-            {
+        switch (choise)
+        {
 
-                case "1":
-                    foreach (Room room in rooms)
+            case "1":
+                foreach (Room room in rooms)
 
-                    {
-                        if (room.Status == RoomStatus.Occupied){ //om rum är occupied så händer detta
-                            Console.WriteLine(room.Status);
+                {
+                    if (room.Status == RoomStatus.Occupied)
+                    { //om rum är occupied så händer detta
+                        Console.WriteLine(room.Status);
                         System.Console.WriteLine(room.User + " is living here");
                         System.Console.WriteLine(room.Roomnummer + "room nummber");
 
                         System.Console.WriteLine("------------");
-                        }
-
                     }
+
+                }
 
                 Console.ReadLine();
-                    break;
+                break;
 
-                case "2":
-                    foreach (Room room in rooms)
+            case "2":
+                foreach (Room room in rooms)
 
+                {
+                    if (room.Status != RoomStatus.Occupied) //om rum inte är occupied så händer detta 
                     {
-                        if (room.Status != RoomStatus.Occupied) //om rum inte är occupied så händer detta 
-                        {
 
 
-                            Console.WriteLine(room.Status);
-                            System.Console.WriteLine(room.Roomnummer + "room nummber");
-                            System.Console.WriteLine("------------");
-                           
-                        }
-                    }
-                     Console.ReadLine();
-
-
-                    break;
-
-                case "3":
-
-                    foreach (Room room in rooms) // visar alla rum som är lediga
-
-                    {
-                        if (room.Status == RoomStatus.Avaible)
-                        {
-
-
-                            Console.WriteLine(room.Status);
-                            System.Console.WriteLine(room.Roomnummer + "room nummber");
-                            System.Console.WriteLine("------------");
-                        }
-
-
-
-
-
+                        Console.WriteLine(room.Status);
+                        System.Console.WriteLine(room.Roomnummer + "room nummber");
+                        System.Console.WriteLine("------------");
 
                     }
-                    // får dig att skrive rum nummer och namn och sedan ändrar det rummit till occupied och ändrar namnet till namnet du skrev
-                    System.Console.WriteLine("What number are you choosing");
-                    string number = Console.ReadLine()!;
-                    Console.Clear();
-                    System.Console.WriteLine("Choose a name for the guest room");
+                }
+                Console.ReadLine();
 
-                    string name = Console.ReadLine()!;
+
+                break;
+
+            case "3":
+
+                foreach (Room room in rooms) // visar alla rum som är lediga
+
+                {
+                    if (room.Status == RoomStatus.Avaible)
+                    {
+
+
+                        Console.WriteLine(room.Status);
+                        System.Console.WriteLine(room.Roomnummer + "room nummber");
+                        System.Console.WriteLine("------------");
+                    }
+
+
+
+
+
+
+                }
+                // får dig att skrive rum nummer och namn och sedan ändrar det rummit till occupied och ändrar namnet till namnet du skrev
+                System.Console.WriteLine("What number are you choosing");
+                string number = Console.ReadLine()!;
+                Console.Clear();
+                System.Console.WriteLine("Choose a name for the guest room");
+
+                string name = Console.ReadLine()!;
 
                 foreach (Room roms in rooms)
                 {
@@ -156,41 +158,41 @@ if (File.Exists("Room.txt"))//denna funktionen läser in alla raderna och sedan 
 
                     }
                 }
-                    List<string> updatedLines = new List<string>();//för att kunna hitta den speficifa raden och ändra den
+                List<string> updatedLines = new List<string>();//för att kunna hitta den speficifa raden och ändra den
 
-           foreach (var room in rooms) 
-            {
-            string line = $"{room.Roomnummer},{room.User},{room.Status}";
-            updatedLines.Add(line);
-            }
+                foreach (var room in rooms)
+                {
+                    string line = $"{room.Roomnummer},{room.User},{room.Status}";
+                    updatedLines.Add(line);
+                }
 
-File.WriteAllLines("Room.txt", updatedLines);
-                    break;
-
-
-
-
-                    
-                
+                File.WriteAllLines("Room.txt", updatedLines);
+                break;
 
 
 
 
 
-                case "4":
 
 
-                    foreach (Room room in rooms) // skriver alla run för att tillfälidgt sätta ett room i maintence
 
-                    {
 
-                        Console.WriteLine(room.Status);
-                        System.Console.WriteLine(room.Roomnummer + "room nummber");
-                        System.Console.WriteLine("------------");
 
-                    }
-                    System.Console.WriteLine("What room do you want to tempoarly diasble");
-                    string disable = Console.ReadLine()!;  // väljer rum nummer och sedan ändrar den till Maintence
+
+            case "4":
+
+
+                foreach (Room room in rooms) // skriver alla run för att tillfälidgt sätta ett room i maintence
+
+                {
+
+                    Console.WriteLine(room.Status);
+                    System.Console.WriteLine(room.Roomnummer + "room nummber");
+                    System.Console.WriteLine("------------");
+
+                }
+                System.Console.WriteLine("What room do you want to tempoarly diasble");
+                string disable = Console.ReadLine()!;  // väljer rum nummer och sedan ändrar den till Maintence
 
                 foreach (Room room in rooms)//loopar alla rummen
                 {
@@ -201,38 +203,38 @@ File.WriteAllLines("Room.txt", updatedLines);
                         room.User = ""; //ändrar usern
                     }
                 }
-                     List<string> updatedLiness = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad(med hjälp av raderna inder)
+                List<string> updatedLiness = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad(med hjälp av raderna inder)
 
-             foreach (var room in rooms) //loppar igenom alla i listan
-              {
-              string line = $"{room.Roomnummer},{room.User},{room.Status}";//sparar alla raderna
-              updatedLiness.Add(line);
-               }
+                foreach (var room in rooms) //loppar igenom alla i listan
+                {
+                    string line = $"{room.Roomnummer},{room.User},{room.Status}";//sparar alla raderna
+                    updatedLiness.Add(line);
+                }
 
-               File.WriteAllLines("Room.txt", updatedLiness);//skriver över det gamla och lägger till alla nya rader
-
-                    
-                    Console.Clear();
-                    break;
+                File.WriteAllLines("Room.txt", updatedLiness);//skriver över det gamla och lägger till alla nya rader
 
 
-                case "5":
+                Console.Clear();
+                break;
 
-                    foreach (Room room in rooms) //kollar alla rum som är Occupied, du skriver sedan vilket namn och sedan ändrar namnet till tomt och ändrar statuset till Avialible
+
+            case "5":
+
+                foreach (Room room in rooms) //kollar alla rum som är Occupied, du skriver sedan vilket namn och sedan ändrar namnet till tomt och ändrar statuset till Avialible
+                {
+                    if (room.Status == RoomStatus.Occupied)//käckar om rummet är Occupied eller inte
                     {
-                        if (room.Status == RoomStatus.Occupied)//käckar om rummet är Occupied eller inte
-                        {
-                            System.Console.WriteLine(room.User + " this is the person living here");
-                            System.Console.WriteLine(room.Roomnummer + " this is the room nummer");
-
-
-                        }
+                        System.Console.WriteLine(room.User + " this is the person living here");
+                        System.Console.WriteLine(room.Roomnummer + " this is the room nummer");
 
 
                     }
 
-                    System.Console.WriteLine("what Guest do you want to CHeckout out");
-                    string Check = Console.ReadLine()!;
+
+                }
+
+                System.Console.WriteLine("what Guest do you want to CHeckout out");
+                string Check = Console.ReadLine()!;
                 foreach (Room room in rooms)//loopar alla rummen
                 {
 
@@ -243,18 +245,63 @@ File.WriteAllLines("Room.txt", updatedLines);
                         break;
                     }
                 }
-                      List<string> updatedLine = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad
+                List<string> updatedLine = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad
 
-             foreach (var room in rooms) //-,,-
-              {
-              string line = $"{room.Roomnummer},{room.User},{room.Status}";
-              updatedLine.Add(line);
-               }
+                foreach (var room in rooms) //-,,-
+                {
+                    string line = $"{room.Roomnummer},{room.User},{room.Status}";
+                    updatedLine.Add(line);
+                }
 
-               File.WriteAllLines("Room.txt", updatedLine);
+                File.WriteAllLines("Room.txt", updatedLine);
 
-                    break;
-            }
+                break;
+            case "6":
+
+                foreach (Room room in rooms)//loopar alla rummen
+                {
+
+                    if (room.Status == RoomStatus.Maintence)//kollar så att det är rätt user
+                    {
+
+                        Console.WriteLine(room.Status);
+                        System.Console.WriteLine(room.Roomnummer + "room nummber");
+                        System.Console.WriteLine("------------");
+                    }
+
+
+
+                }
+                Console.WriteLine("What room do you want to make avible");
+     string CHange = Console.ReadLine()!;
+                foreach (Room room in rooms)
+                {
+                    
+                  if(room.Roomnummer == CHange)
+                    {
+                        room.Status = RoomStatus.Avaible;
+
+
+                    }
+
+
+                }
+                Console.WriteLine("Room number " + CHange + "is avible");
+                  List<string> updatedLine1 = new List<string>();//denna tar imprencip bort alla raderna och sedan skriver tillbaka dem och den nya raden är uppdaterad
+
+                foreach (var room in rooms) //-,,-
+                {
+                    string line = $"{room.Roomnummer},{room.User},{room.Status}";
+                    updatedLine1.Add(line);
+                }
+
+                File.WriteAllLines("Room.txt", updatedLine1);
+               
+               
+
+                break;
+        }
+            
 
         }
     }
